@@ -1,0 +1,106 @@
+import UIKit
+import Foundation
+
+var str = "Hello, playground"
+
+class Personne {
+    var name: String
+    var firstName: String
+    var age: Int
+    var adress: String
+    var gender: String
+    var isMoving: Bool = false
+    var isMarried: Bool
+    var itIsBirthday: Bool
+    
+    init(name: String, firstName: String, gender: String, age: Int, adress: String, isMoving: Bool, isMarried: Bool, itIsBirthday: Bool) {
+        self.name = name
+        self.firstName = firstName
+        self.age = age
+        self.adress = adress
+        self.gender = gender
+        self.isMoving = isMoving
+        self.isMarried = isMarried
+        self.itIsBirthday = itIsBirthday
+    }
+    
+    func changeNameAfterMarriage(newName: String) {
+        if gender.contains("f") && isMarried {
+            self.name = newName
+        } else {
+          print("Un homme ne change pas de nom de famille après le marriage !")
+        }
+    }
+    
+    func newAdressAfterMoving(newAdress: String) {
+        if isMoving {
+            self.adress = newAdress
+        }
+    }
+    
+    func gettingOlderEachAnniversary() {
+        if itIsBirthday {
+            self.age += 1
+        }
+    }
+    
+    func numberToAdd(numberOne: Int, numberTwo: Int) -> Int {
+        return numberOne + numberTwo
+    }
+}
+
+
+
+let aristide = Personne(name: "Ross", firstName: "Geller", gender: "Male", age: 22, adress: "Somewhere in NY", isMoving: true, isMarried: false, itIsBirthday: false)
+
+aristide.name = "LAUGA"
+aristide.firstName = "Aristide"
+aristide.gender = "Male"
+
+aristide.changeNameAfterMarriage(newName: "Laurent")
+aristide.isMoving = true
+aristide.newAdressAfterMoving(newAdress: "25 Avenue des Champs-Élysées,Paris")
+
+print(aristide.adress)
+
+aristide.age = 21
+aristide.itIsBirthday = true
+aristide.gettingOlderEachAnniversary()
+print("Aujourd'hui c'est mon anniversaire, ça me fait extrêmement plaisir de fêter mes \(aristide.age) ans avec vous.")
+
+aristide.numberToAdd(numberOne: 2020, numberTwo: 8909876567)
+print(aristide.numberToAdd(numberOne: 1000, numberTwo: 603))
+
+//aristide.affiche()
+//print(aristide.affiche(ValueToDisplay: "Nom"))
+//print(aristide.affiche(ValueToDisplay: 4))
+
+
+print(aristide.adress)
+
+
+class film {
+    var movieName: String = "Thriller"
+    var director: String = ""
+    var year: Int = 1986
+    var hero: String = "Mickael Jackson"
+    var heroine: String = "Don't Know"
+}
+
+class Acteur: Personne {
+    
+    var filmography: film = film()
+    
+    func playedARole(in movie: String) {
+    }
+    
+    func participationToAnAudition(for society: String) {
+    }
+    
+}
+
+
+let mattLeBlanc = Acteur(name: "Le Blanc", firstName: "Matt", gender: "Male", age: 42, adress: "47 Rue Evergreen Terrace", isMoving: false, isMarried: false, itIsBirthday: false)
+mattLeBlanc.filmography.hero = "Joey Tribbiani"
+print(mattLeBlanc.filmography.hero)
+
