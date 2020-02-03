@@ -1,0 +1,193 @@
+//
+//  main.swift
+//  TP Calculatrice améliorée
+//
+//  Created by LAUGA Aristide on 11/01/2020.
+//  Copyright © 2020 LAUGA Aristide. All rights reserved.
+//
+
+import Foundation
+
+func menu() {
+    print("--- Menu ---")
+    print("1. Addition")
+    print("2. Soustraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulo")
+    print("6. Carré")
+    print("Que voulez-vous ? (de 1 à 6) ")
+}
+
+func input() -> Int {
+    let strData = readLine()
+    return Int(strData!)!
+}
+func inputString() -> String {
+    let strData = readLine()
+    return strData!
+}
+
+var chiffreUn: Int
+var chiffreDeux: Int
+var operateur: Int
+var continueOrNo: String = "Oui"
+var compteurDeCalcul: Int = 0
+
+repeat {
+    
+    repeat {
+    
+    menu()
+    operateur = input()
+    if operateur > 0 && operateur < 7 && continueOrNo == "Oui" {
+         print("Entrez votre premier nombre :")
+        chiffreUn = input()
+    if operateur != 6 {
+        print("Entrez votre second nombre :")
+        chiffreDeux = input()
+        
+                switch operateur {
+                
+                case 1:
+                let resultat = chiffreUn + chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                    
+                case 2:
+                let resultat = chiffreUn - chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 3:
+                let resultat = chiffreUn * chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 4:
+                let resultat = chiffreUn / chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 5:
+                let resultat = chiffreUn % chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 6:
+                let resultat = chiffreUn * chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                default:
+                print("L'opération n'a pas pu être effectuée.")
+                }
+        
+        } else {
+        chiffreDeux = chiffreUn
+        
+            switch operateur {
+                
+                case 1:
+                let resultat = chiffreUn + chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 2:
+                let resultat = chiffreUn - chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                
+                case 3:
+                let resultat = chiffreUn * chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 4:
+                let resultat = chiffreUn / chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+               repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 5:
+                let resultat = chiffreUn % chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+               repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                case 6:
+                let resultat = chiffreUn * chiffreDeux
+                print("Le résultat de l'opération est \(resultat)" + ".")
+                compteurDeCalcul += 1
+                print("Vous avez effectué \(compteurDeCalcul)" + " calcul(s) depuis le démarrage du programme.")
+                repeat {
+                print("Souhaitez-vous effectuer une autre opération (Oui ou Non) ?")
+                continueOrNo = inputString()
+                    } while continueOrNo != "Non" && continueOrNo != "Oui"
+                
+                default:
+                print("L'opération n'a pas pu être effectuée.")
+                }
+            }
+        }
+    } while operateur < 1 || operateur > 6
+} while continueOrNo == "Oui"
+
+if continueOrNo == "Non" {
+    print("Vous avez effectué \(compteurDeCalcul) calcul(s) au total.")
+    print("Fin du programme de calcul.")
+}
